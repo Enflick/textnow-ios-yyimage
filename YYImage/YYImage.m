@@ -9,7 +9,11 @@
 //  LICENSE file in the root directory of this source tree.
 //
 
+#if __has_include(<YYImage/YYImage.h>)
+#import <YYImage/YYImage.h>
+#else
 #import "YYImage.h"
+#endif
 
 /**
  An array of NSNumber objects, shows the best order for path scale search.

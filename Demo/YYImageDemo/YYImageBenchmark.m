@@ -6,10 +6,18 @@
 //  Copyright (c) 2015 ibireme. All rights reserved.
 //
 
+#if __has_include(<YYImage/YYImage.h>)
+#import <YYImage/YYImageBenchmark.h>
+#import <YYImage/YYImage.h>
+#import <YYImage/YYBPGCoder.h>
+#import <YYImage/UIView+YYAdd.h>
+#else
 #import "YYImageBenchmark.h"
 #import "YYImage.h"
 #import "YYBPGCoder.h"
 #import "UIView+YYAdd.h"
+#endif
+
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuartzCore/QuartzCore.h>
