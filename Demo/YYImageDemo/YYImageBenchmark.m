@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 ibireme. All rights reserved.
 //
 
-#if __has_include(<YYImage/YYImage.h>)
-#import <YYImage/YYImageBenchmark.h>
-#import <YYImage/YYImage.h>
-#import <YYImage/YYBPGCoder.h>
-#import <YYImage/UIView+YYAdd.h>
+#if __has_include(<YYImageTextNow/YYImage.h>)
+#import <YYImageTextNow/YYImageBenchmark.h>
+#import <YYImageTextNow/YYImage.h>
+#import <YYImageTextNow/YYBPGCoder.h>
+#import <YYImageTextNow/UIView+YYAdd.h>
 #else
 #import "YYImageBenchmark.h"
 #import "YYImage.h"

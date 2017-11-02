@@ -5,8 +5,8 @@
 //  Created by ibireme on 15/8/13.
 //  Copyright (c) 2015 ibireme. All rights reserved.
 //
-#if __has_include(<YYImage/YYImage.h>)
-#import <YYImage/YYBPGCoder.h>
+#if __has_include(<YYImageTextNow/YYImage.h>)
+#import <YYImageTextNow/YYBPGCoder.h>
 #else
 #import "YYBPGCoder.h"
 #endif

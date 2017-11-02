@@ -11,13 +11,13 @@
 
 #import <UIKit/UIKit.h>
 
-#if __has_include(<YYImage/YYImage.h>)
+#if __has_include(<YYImageTextNow/YYImage.h>)
 FOUNDATION_EXPORT double YYImageVersionNumber;
 FOUNDATION_EXPORT const unsigned char YYImageVersionString[];
-#import <YYImage/YYFrameImage.h>
-#import <YYImage/YYSpriteSheetImage.h>
-#import <YYImage/YYImageCoder.h>
-#import <YYImage/YYAnimatedImageView.h>
+#import <YYImageTextNow/YYFrameImage.h>
+#import <YYImageTextNow/YYSpriteSheetImage.h>
+#import <YYImageTextNow/YYImageCoder.h>
+#import <YYImageTextNow/YYAnimatedImageView.h>
 #elif __has_include(<YYWebImage/YYImage.h>)
 #import <YYWebImage/YYFrameImage.h>
 #import <YYWebImage/YYSpriteSheetImage.h>

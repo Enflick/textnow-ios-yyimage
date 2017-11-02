@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#if __has_include(<YYImage/YYImage.h>)
-#import <YYImage/YYImage.h>
+#if __has_include(<YYImageTextNow/YYImage.h>)
+#import <YYImageTextNow/YYImage.h>
 #else
 #import "YYImage.h"
 #endif

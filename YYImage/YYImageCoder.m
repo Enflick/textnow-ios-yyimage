@@ -9,9 +9,9 @@
 //  LICENSE file in the root directory of this source tree.
 //
 
-#if __has_include(<YYImage/YYImage.h>)
-#import <YYImage/YYImage.h>
-#import <YYImage/YYImageCoder.h>
+#if __has_include(<YYImageTextNow/YYImage.h>)
+#import <YYImageTextNow/YYImage.h>
+#import <YYImageTextNow/YYImageCoder.h>
 #else
 #import "YYImageCoder.h"
 #import "YYImage.h"
