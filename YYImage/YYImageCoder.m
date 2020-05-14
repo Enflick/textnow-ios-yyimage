@@ -1657,7 +1657,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
         UIImage *image = [UIImage imageWithCGImage:imageRef scale:_scale orientation:_orientation];
         CFRelease(imageRef);
         if (!image) return nil;
-        image.yy_isDecodedForDisplay = decoded;
+        image.tnyy_isDecodedForDisplay = decoded;
         frame.image = image;
         return frame;
     }
@@ -1701,7 +1701,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     CFRelease(imageRef);
     if (!image) return nil;
     
-    image.yy_isDecodedForDisplay = YES;
+    image.tnyy_isDecodedForDisplay = YES;
     frame.image = image;
     if (extendToCanvas) {
         frame.width = _width;
@@ -2776,8 +2776,8 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
 
 @implementation UIImage (YYImageCoder)
 
-- (instancetype)yy_imageByDecoded {
-    if (self.yy_isDecodedForDisplay) return self;
+- (instancetype)tnyy_imageByDecoded {
+    if (self.tnyy_isDecodedForDisplay) return self;
     CGImageRef imageRef = self.CGImage;
     if (!imageRef) return self;
     CGImageRef newImageRef = YYCGImageCreateDecodedCopy(imageRef, YES);
@@ -2785,21 +2785,21 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     UIImage *newImage = [[self.class alloc] initWithCGImage:newImageRef scale:self.scale orientation:self.imageOrientation];
     CGImageRelease(newImageRef);
     if (!newImage) newImage = self; // decode failed, return self.
-    newImage.yy_isDecodedForDisplay = YES;
+    newImage.tnyy_isDecodedForDisplay = YES;
     return newImage;
 }
 
-- (BOOL)yy_isDecodedForDisplay {
+- (BOOL)tnyy_isDecodedForDisplay {
     if (self.images.count > 1 || [self isKindOfClass:[YYSpriteSheetImage class]]) return YES;
-    NSNumber *num = objc_getAssociatedObject(self, @selector(yy_isDecodedForDisplay));
+    NSNumber *num = objc_getAssociatedObject(self, @selector(tnyy_isDecodedForDisplay));
     return [num boolValue];
 }
 
-- (void)setYy_isDecodedForDisplay:(BOOL)isDecodedForDisplay {
-    objc_setAssociatedObject(self, @selector(yy_isDecodedForDisplay), @(isDecodedForDisplay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setTnyy_isDecodedForDisplay:(BOOL)isDecodedForDisplay {
+    objc_setAssociatedObject(self, @selector(tnyy_isDecodedForDisplay), @(isDecodedForDisplay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)yy_saveToAlbumWithCompletionBlock:(void(^)(NSURL *assetURL, NSError *error))completionBlock {
+- (void)tnyy_saveToAlbumWithCompletionBlock:(void(^)(NSURL *assetURL, NSError *error))completionBlock {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *data = [self _yy_dataRepresentationForSystem:YES];
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
@@ -2816,7 +2816,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     });
 }
 
-- (NSData *)yy_imageDataRepresentation {
+- (NSData *)tnyy_imageDataRepresentation {
     return [self _yy_dataRepresentationForSystem:NO];
 }
 
