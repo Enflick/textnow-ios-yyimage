@@ -188,7 +188,7 @@ typedef NS_ENUM(NSUInteger, YYAnimatedImageType) {
             
             if (miss) {
                 UIImage *img = [_curImage animatedImageFrameAtIndex:idx];
-                img = img.yy_imageByDecoded;
+                img = img.tnyy_imageByDecoded;
                 if ([self isCancelled]) break;
                 LOCK_VIEW(view->_buffer[@(idx)] = img ? img : [NSNull null]);
                 view = nil;

@@ -315,13 +315,13 @@ typedef NS_ENUM(NSUInteger, YYImageBlendOperation) {
  @return an image decoded, or just return itself if no needed.
  @see yy_isDecodedForDisplay
  */
-- (instancetype)yy_imageByDecoded;
+- (instancetype)tnyy_imageByDecoded;
 
 /**
  Wherher the image can be display on screen without additional decoding.
  @warning It just a hint for your code, change it has no other effect.
  */
-@property (nonatomic) BOOL yy_isDecodedForDisplay;
+@property (nonatomic) BOOL tnyy_isDecodedForDisplay;
 
 /**
  Saves this image to iOS Photos Album. 
@@ -334,7 +334,7 @@ typedef NS_ENUM(NSUInteger, YYImageBlendOperation) {
     assetURL: An URL that identifies the saved image file. If the image is not saved, assetURL is nil.
     error: If the image is not saved, an error object that describes the reason for failure, otherwise nil.
  */
-- (void)yy_saveToAlbumWithCompletionBlock:(nullable void(^)(NSURL * _Nullable assetURL, NSError * _Nullable error))completionBlock;
+- (void)tnyy_saveToAlbumWithCompletionBlock:(nullable void(^)(NSURL * _Nullable assetURL, NSError * _Nullable error))completionBlock;
 
 /**
  Return a 'best' data representation for this image.
@@ -345,7 +345,7 @@ typedef NS_ENUM(NSUInteger, YYImageBlendOperation) {
  
  @return Image data, or nil if an error occurs.
  */
-- (nullable NSData *)yy_imageDataRepresentation;
+- (nullable NSData *)tnyy_imageDataRepresentation;
 
 @end
 
